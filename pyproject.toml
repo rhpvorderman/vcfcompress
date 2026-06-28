@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="vcfcompress"
+description="Compress VCF files."
+authors = [
+    {name = "Ruben Vorderman", email = "r.h.p.vorderman@lumc.nl"}
+]
+keywords=[
+    "VCF",
+    "compress",
+]
+readme = "README.rst"
+license = "AGPL-3.0-or-later"
+classifiers = [
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
+        "Programming Language :: Python :: 3.14",
+        "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+requires-python = ">=3.10"
+dependencies = [
+        "xopen>=2.0.0",
+]
+dynamic = ["version"]
+
+[project.scripts]
+vcfcompress = "vcfcompress.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+"Homepage" = "https://github.com/rhpvorderman/vcfcompress"
+"Issue tracker" = "https://github.com/rhpvorderman/vcfcompress/issues"
+
+[tool.setuptools_scm]
+write_to = "src/vcfcompres/_version.py"
